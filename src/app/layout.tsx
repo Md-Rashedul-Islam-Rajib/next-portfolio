@@ -1,16 +1,55 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Exo_2 } from "next/font/google";
 import "./globals.css";
+import { FloatingNav } from "@/components/ui/floating-navbar";
+import {Icon} from "@iconify/react"
+import { cn } from "@/lib/utils";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const exo_2 = Exo_2({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+ const navItems = [
+   {
+     name: "Home",
+     link: "/",
+     //  icon: <IconHome className="h-4 w-4 text-neutral-500 dark:text-white" />,
+     icon: (
+       <Icon
+         icon="solar:home-outline"
+         width="24"
+         height="24"
+         className="h-4 w-4 text-neutral-500 dark:text-white"
+       />
+     ),
+   },
+   {
+     name: "About",
+     link: "/about",
+     //  icon: <Icon className="h-4 w-4 text-neutral-500 dark:text-white" />,
+     icon: (
+       <Icon
+         icon="simple-icons:aboutdotme"
+         width="24"
+         height="24"
+         className="h-4 w-4 text-neutral-500 dark:text-white"
+       />
+     ),
+   },
+   {
+     name: "Contact",
+     link: "/contact",
+     //  icon: <IconMessage className="h-4 w-4 text-neutral-500 dark:text-white" />,
+     icon: (
+       <Icon
+         icon="mdi:contact-mail"
+         width="24"
+         height="24"
+         className="h-4 w-4 text-neutral-500 dark:text-white"
+       />
+     ),
+   },
+ ];
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,8 +64,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={cn("min-h-screen",exo_2.className)}
       >
+        <FloatingNav navItems={navItems}/>
         {children}
       </body>
     </html>
