@@ -6,7 +6,7 @@ import NavMenu from "./NavMenu";
 import { useRouter } from "next/navigation";
 import { signOut} from "next-auth/react"
 
-type UserProps = {
+export type UserProps = {
   user?: {
     name?: string | null | undefined;
     email?: string | null | undefined;

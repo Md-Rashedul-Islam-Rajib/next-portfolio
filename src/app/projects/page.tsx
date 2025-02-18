@@ -8,7 +8,7 @@ export default function ProjectsPage() {
   const { data } = useGetAllProjectsQuery(undefined);
   const projects = data?.data;
 
-  // if (isLoading) return <Loader />; // Show loader while fetching data
+  console.log(projects);
 
   return (
     <div className="container mx-auto px-4 py-8">

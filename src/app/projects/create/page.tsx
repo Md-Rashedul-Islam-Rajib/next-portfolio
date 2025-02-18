@@ -77,7 +77,7 @@ const CreateProject = () => {
 
       await createProject(projectInfo).unwrap();
       form.reset();
-      router.push("/admin/projects");
+      router.push("/projects");
     } catch (err) {
       console.log(err);
     }
