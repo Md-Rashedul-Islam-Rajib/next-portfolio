@@ -35,7 +35,7 @@ const Navbar =({session}: {session : UserProps | null }) => {
           <div>
             {session?.user ? (
               <Button
-                className="bg-red-500 hover:bg-red-600"
+                className="bg-red-500 hover:bg-white hover:text-black"
                 onClick={() => signOut()}
               >
                 Log Out

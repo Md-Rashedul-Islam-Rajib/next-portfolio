@@ -12,7 +12,9 @@ const DashboardLogin = () => {
       <div className="flex flex-col gap-4 w-40 mx-auto mt-40">
         <Button
           onClick={() =>
-            signIn("google", { callbackUrl: `${process.env.URL}/dashboard` })
+            signIn("google",
+              // { callbackUrl: `${process.env.URL}/dashboard` }
+            )
           }
           className="bg-gray-800"
         >
@@ -21,7 +23,11 @@ const DashboardLogin = () => {
         </Button>
         <Button
           onClick={() =>
-            signIn("github", { callbackUrl: `${process.env.URL}/dashboard` })
+            signIn("github",
+              {
+              callbackUrl: "http://localhost:3000/dashboard",
+            }
+            )
           }
           className="bg-gray-800"
         >

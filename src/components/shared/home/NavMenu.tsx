@@ -13,9 +13,14 @@ const navItems = [
     icon: "solar:home-outline",
   },
   {
-    name: "About",
-    link: "/about",
-    icon: "simple-icons:aboutdotme",
+    name: "Blogs",
+    link: "/blogs",
+    icon: "line-md:rss",
+  },
+  {
+    name: "Dashboard",
+    link: "/dashboard",
+    icon: "material-symbols:dashboard",
   },
   {
     name: "Contact",

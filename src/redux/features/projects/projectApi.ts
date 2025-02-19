@@ -21,8 +21,6 @@ const projectApi = baseApi.injectEndpoints({
     getAllProjects: builder.query({
       providesTags: ["PROJECTS", "UPDATE"],
       query: () => {
-        
-
         return {
           url: "/projects",
           method: "GET",
@@ -44,7 +42,10 @@ const projectApi = baseApi.injectEndpoints({
       query: ({ id, updatedData }) => ({
         url: `/projects/${id}`,
         method: "PUT",
-        body: updatedData,
+        body: JSON.stringify(updatedData),
+        headers: {
+          "Content-Type": "application/json",
+        },
       }),
       invalidatesTags: ["UPDATE", "PROJECT"],
     }),
@@ -59,5 +60,5 @@ const projectApi = baseApi.injectEndpoints({
 });
 
 export const {
- useCreateProjectMutation,useGetAllProjectsQuery,useGetSingleProjectQuery,useDeleteProjectMutation,useLazyGetAllProjectsQuery,useLazyGetSingleProjectQuery
+ useCreateProjectMutation,useGetAllProjectsQuery,useUpdateProjectMutation,useGetSingleProjectQuery,useDeleteProjectMutation,useLazyGetAllProjectsQuery,useLazyGetSingleProjectQuery
 } = projectApi;
