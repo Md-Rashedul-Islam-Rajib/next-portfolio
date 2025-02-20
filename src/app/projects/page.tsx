@@ -16,7 +16,7 @@ export default function ProjectsPage() {
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {projects?.map((project : TProject) => (
-          <ProjectCard key={project._id} project={project} />
+          <ProjectCard key={project._id} project={project} action="get"/>
         ))}
       </div>
     </div>

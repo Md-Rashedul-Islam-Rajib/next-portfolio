@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import { Badge } from "@/components/ui/badge";
@@ -35,7 +37,7 @@ interface MultiSelectContextProps {
   setInputValue: React.Dispatch<React.SetStateAction<string>>;
   activeIndex: number;
   setActiveIndex: React.Dispatch<React.SetStateAction<number>>;
-  ref: React.RefObject<HTMLInputElement>;
+  ref: React.RefObject<HTMLInputElement | null >;
   handleSelect: (e: React.SyntheticEvent<HTMLInputElement>) => void;
 }
 
@@ -67,7 +69,7 @@ const MultiSelector = ({
   const [inputValue, setInputValue] = useState("");
   const [open, setOpen] = useState<boolean>(false);
   const [activeIndex, setActiveIndex] = useState<number>(-1);
-  const inputRef = React.useRef<HTMLInputElement>(null);
+  const inputRef = React.useRef<HTMLInputElement | null>(null!);
   const [isValueSelected, setIsValueSelected] = React.useState(false);
   const [selectedValue, setSelectedValue] = React.useState("");
 

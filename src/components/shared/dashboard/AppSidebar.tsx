@@ -9,7 +9,7 @@ const data = {
   navMain: [
     {
       title: "Project",
-      url: "#",
+      url: "/dashboard/blogs",
       icon: "material-symbols:terminal-rounded",
       isActive: true,
       items: [
@@ -29,7 +29,7 @@ const data = {
     },
     {
       title: "Blogs",
-      url: "#",
+      url: "/dashboard/blogs",
       icon: "line-md:rss",
       items: [
         {
@@ -65,7 +65,7 @@ const data = {
 
   return (
     <Sidebar className="fixed top-0 left-0 h-full w-64 bg-white/30 backdrop-blur-lg shadow-lg transition-transform duration-300 z-50">
-          <SidebarContent className="p-4">
+          <SidebarContent className="p-4 mt-[30%]">
               <NavMain items={data.navMain} />
      
       </SidebarContent>

@@ -13,47 +13,46 @@ import { Icon } from "@iconify/react";
 
 interface ProjectCardProps {
   project: TProject;
+  action?: "get";
 }
 
-export function ProjectCard({ project }: ProjectCardProps) {
-  return (
-    <Link href={`/projects/${project._id}`} passHref>
-      <Card className="w-full md:max-w-md bg-card text-card-foreground shadow-lg cursor-pointer transition-transform hover:scale-105">
-        {/* Project Image */}
-        <div className="relative w-full h-48">
-          <Image
-            src={project.image}
-            alt={project.title}
-            layout="fill"
-            objectFit="cover"
-            className="rounded-t-md"
-            priority
-          />
+export function ProjectCard({ project, action }: ProjectCardProps) {
+  const cardContent = (
+    <Card className="w-full md:max-w-md bg-card text-card-foreground shadow-lg cursor-pointer transition-transform hover:scale-105">
+      {/* Project Image */}
+      <div className="relative w-full h-48">
+        <Image
+          src={project.image}
+          alt={project.title}
+          layout="fill"
+          objectFit="cover"
+          className="rounded-t-md"
+          priority
+        />
+      </div>
+
+      <CardHeader>
+        <CardTitle className="text-lg font-semibold">{project.title}</CardTitle>
+      </CardHeader>
+
+      <CardContent>
+        <p className="text-sm text-muted-foreground">
+          {project.descriptions.slice(0, 100)}...
+        </p>
+        {/* Tech Stack */}
+        <div className="mt-3 flex flex-wrap gap-2">
+          {project.technology.map((tech, index) => (
+            <span
+              key={index}
+              className="px-2 py-1 text-xs font-medium bg-gray-200 dark:bg-gray-700 rounded"
+            >
+              {tech}
+            </span>
+          ))}
         </div>
+      </CardContent>
 
-        <CardHeader>
-          <CardTitle className="text-lg font-semibold">
-            {project.title}
-          </CardTitle>
-        </CardHeader>
-
-        <CardContent>
-          <p className="text-sm text-muted-foreground">
-            {project.descriptions.slice(0, 100)}...
-          </p>
-          {/* Tech Stack */}
-          <div className="mt-3 flex flex-wrap gap-2">
-            {project.technology.map((tech, index) => (
-              <span
-                key={index}
-                className="px-2 py-1 text-xs font-medium bg-gray-200 dark:bg-gray-700 rounded"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
-        </CardContent>
-
+      {action === "get" && (
         <CardFooter className="flex gap-2">
           <Button asChild variant="outline" size="sm">
             <a
@@ -71,7 +70,15 @@ export function ProjectCard({ project }: ProjectCardProps) {
             </a>
           </Button>
         </CardFooter>
-      </Card>
+      )}
+    </Card>
+  );
+
+  return action === "get" ? (
+    <Link href={`/projects/${project._id}`} passHref>
+      {cardContent}
     </Link>
+  ) : (
+    cardContent
   );
 }

@@ -92,6 +92,9 @@ importers:
       simplex-noise:
         specifier: ^4.0.3
         version: 4.0.3
+      sonner:
+        specifier: ^2.0.0
+        version: 2.0.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0)
       tailwind-merge:
         specifier: ^3.0.1
         version: 3.0.1
@@ -2473,6 +2476,12 @@ packages:
 
   simplex-noise@4.0.3:
     resolution: {integrity: sha512-qSE2I4AngLQG7BXqoZj51jokT4WUXe8mOBrvfOXpci8+6Yu44+/dD5zqDpOx3Ux792eamTd2lLcI8jqFntk/lg==}
+
+  sonner@2.0.0:
+    resolution: {integrity: sha512-3WeSl3WrEdhmdiTniT8JsCiVRVDOdn7k+4MG2drqzSMOeqrExm03HIwDBPKuq52JBqL7wRLG17QBIiSleUbljw==}
+    peerDependencies:
+      react: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
+      react-dom: ^18.0.0 || ^19.0.0 || ^19.0.0-rc
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -5293,6 +5302,11 @@ snapshots:
     optional: true
 
   simplex-noise@4.0.3: {}
+
+  sonner@2.0.0(react-dom@19.0.0(react@19.0.0))(react@19.0.0):
+    dependencies:
+      react: 19.0.0
+      react-dom: 19.0.0(react@19.0.0)
 
   source-map-js@1.2.1: {}
 

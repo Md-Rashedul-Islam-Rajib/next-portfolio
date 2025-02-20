@@ -1,4 +1,5 @@
 import Introduction from "@/components/shared/home/Introduction";
+import Projects from "@/components/shared/home/Projects";
 import DownloadResume from "@/components/shared/home/ResumeDownload";
 import Skills from "@/components/shared/home/Skills";
 // import { WavyBackground } from "@/components/ui/wavy-background";
@@ -20,6 +21,7 @@ export default function Home() {
     <div className="mt-8">
       <Introduction />
       <Skills />
+      <Projects/>
       <DownloadResume/>
     </div>
   );

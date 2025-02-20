@@ -9,6 +9,7 @@ import Navbar from "@/components/shared/home/Navbar";
 import { getServerSession } from "next-auth";
 import { authOptions } from "@/utilities/authOptions";
 import { JSX } from "react";
+import { Toaster } from "sonner";
 
 
 
@@ -37,6 +38,7 @@ export default async function RootLayout({
         <ReduxProvider>
         <Navbar session={session} />
         {children}
+        <Toaster />
         </ReduxProvider>
       </body>
     </html>

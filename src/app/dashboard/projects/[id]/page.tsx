@@ -12,8 +12,10 @@ const ProjectDetails = () => {
   const { id } = useParams();
   const { data, error, isLoading } = useGetSingleProjectQuery(id);
 
-  if (isLoading)
-    return <p className="text-center text-lg font-semibold">Loading...</p>;
+ if (isLoading)
+   return (
+     <p className="text-center text-lg font-semibold mt-[30%]">Loading...</p>
+   );
   if (error)
     return (
       <p className="text-center text-red-500 text-lg font-semibold">

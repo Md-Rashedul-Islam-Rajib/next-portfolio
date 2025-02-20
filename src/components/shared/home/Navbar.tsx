@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import NavMenu from "./NavMenu";
 import { useRouter } from "next/navigation";
 import { signOut} from "next-auth/react"
+import { Session } from "next-auth";
 
 export type UserProps = {
   user?: {
@@ -15,13 +16,9 @@ export type UserProps = {
 }
 
 
-const Navbar =({session}: {session : UserProps | null }) => {
+const Navbar =({session}: {session : Session | null }) => {
     const router = useRouter()
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  
-
-
   const handleLogin = () => {
     router.push("/login");
   };
@@ -31,7 +28,7 @@ const Navbar =({session}: {session : UserProps | null }) => {
       <div className="container mx-auto flex items-center justify-center px-5 py-4">
         {/* Menu for Large Screens */}
         <div className="hidden md:flex md:justify-between gap-6 items-center">
-          <NavMenu />
+          <NavMenu session={session}/>
           <div>
             {session?.user ? (
               <Button
@@ -64,7 +61,7 @@ const Navbar =({session}: {session : UserProps | null }) => {
       {/* Dropdown Menu for Mobile */}
       {isMenuOpen && (
         <div className="md:hidden bg-zinc-800 text-white px-5 pb-4 space-y-4">
-          <NavMenu />
+          <NavMenu session={session} />
           <div>
             {session?.user ? (
               <Button
