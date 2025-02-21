@@ -12,8 +12,10 @@ const DashboardLogin = () => {
       <div className="flex flex-col gap-4 w-40 mx-auto mt-40">
         <Button
           onClick={() =>
-            signIn("google",
-              { callbackUrl: 'https://nextport-server.vercel.app/dashboard' }
+            signIn(
+              "google",
+              // { callbackUrl: "http://localhost:3000/dashboard" }
+              { callbackUrl: 'https://next-portfolio-ten-fawn.vercel.app/dashboard' }
             )
           }
           className="bg-gray-800"
@@ -23,10 +25,10 @@ const DashboardLogin = () => {
         </Button>
         <Button
           onClick={() =>
-            signIn("github",
-              {
-              callbackUrl: "https://nextport-server.vercel.app/dashboard",
-            }
+            signIn(
+              "github",
+              // { callbackUrl: "http://localhost:3000/dashboard" }
+              {callbackUrl: "https://next-portfolio-ten-fawn.vercel.app/dashboard",}
             )
           }
           className="bg-gray-800"
