@@ -13,7 +13,7 @@ const DashboardLogin = () => {
         <Button
           onClick={() =>
             signIn("google",
-              // { callbackUrl: `${process.env.URL}/dashboard` }
+              { callbackUrl: 'https://nextport-server.vercel.app/dashboard' }
             )
           }
           className="bg-gray-800"
@@ -25,7 +25,7 @@ const DashboardLogin = () => {
           onClick={() =>
             signIn("github",
               {
-              callbackUrl: "http://localhost:3000/dashboard",
+              callbackUrl: "https://nextport-server.vercel.app/dashboard",
             }
             )
           }
