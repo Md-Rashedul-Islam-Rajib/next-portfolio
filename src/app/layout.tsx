@@ -10,15 +10,9 @@ import { getServerSession } from "next-auth";
 import { authOptions } from "@/utilities/authOptions";
 import { JSX } from "react";
 import { Toaster } from "sonner";
-
-
-
 const exo_2 = Exo_2({
   subsets: ["latin"],
 });
-
-
-
 export const metadata: Metadata = {
   title: "Next Portfolio",
   description: "Personal portfolio app",
