@@ -18,7 +18,7 @@ export default function Home() {
     //   </WavyBackground>
     // </div>
 
-    <div className="mt-8">
+    <div className="my-8">
       <Introduction />
       <Skills />
       <Projects/>
