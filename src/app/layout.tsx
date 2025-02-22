@@ -26,13 +26,13 @@ export default async function RootLayout({
   const session = await getServerSession(authOptions);
   return (
     <html lang="en">
-      <body
-        className={cn("max-h-full",exo_2.className)}
-      >
+      <body className={cn("max-h-full", exo_2.className)}>
         <ReduxProvider>
-        <Navbar session={session} />
-        {children}
-        <Toaster />
+          <div className="mb-8">
+            <Navbar session={session} />
+          </div>
+          {children}
+          <Toaster />
         </ReduxProvider>
       </body>
     </html>
