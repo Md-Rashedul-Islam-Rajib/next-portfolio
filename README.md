@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+# Next Portfolio
 
-First, run the development server:
+[Next Portfolio](https://next-portfolio-ten-fawn.vercel.app)
+
+## Overview
+
+Next portfoli is a personal portfolio site.
+
+## Features
+
+1. Users can register and login, generating a JWT token with a default role (customer).
+2. Anyone can explore all available products.
+3. Only logged-in customers can purchase products within stock.
+4. Customers can manage their orders and update profile information.
+5. Admins can manage all users (customers), their orders, and GEARNODE products.
+
+## Technologies Used
+
+- **Frontend**: React, Vite, Tailwind CSS, TypeScript, ShadCN UI
+- **Backend**: Node.js, Express, TypeScript, Mongoose
+- **Database**: MongoDB
+- **State Management**: Redux, RTK Query
+
+## Resources
+
+- [React Router](https://reactrouter.com/en/main)
+- [ShadCN UI](http://ui.shadcn.com)
+- [React Hook Form](https://reacthookform.com/)
+- [Lottie React](https://lottiereact.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Redux](https://redux.dev)
+- [RTK Query](https://redux-toolkit.js.org/rtk-query/overview)
+
+## How to Clone and Run
+
+### 1. Clone Repositories
+
+Clone both the client and server repositories to your computer:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Md-Rashedul-Islam-Rajib/GearNode
+git clone https://github.com/Md-Rashedul-Islam-Rajib/GearNode-The-Backend-Engine-for-Bike-Enthusiasts
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Configure Backend Credentials
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Replace the necessary environment variables in the `.env` file of the server repository:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+PORT=Your Port
+DB_URL=mongodb credentials
+SALT_ROUND=12
+JWT_ACCESS_SECRET=your secret
+JWT_REFRESH_SECRET=your secret
+JWT_ACCESS_EXPIRES_IN=1d
+JWT_REFRESH_EXPIRES_IN=10d
+```
 
-## Learn More
+- Add your localhost URL to CORS in the `app.ts` file in the server repository.
 
-To learn more about Next.js, take a look at the following resources:
+### 3. Install Dependencies
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open both the client and server repository folders in the command line interface (CLI) and install the necessary npm packages by running:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+pnpm install
+```
 
-## Deploy on Vercel
+### 4. Start the Server
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Navigate to the server repository folder and start the server using `nodemon`:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+cd GearNode-The-Backend-Engine-for-Bike-Enthusiasts
+pnpm dev
+```
+
+### 5. Start the Client
+
+Navigate to the client repository folder and start the client development server:
+
+```bash
+cd GearNode
+pnpm dev
+```
+
+## Admin Credentials
+
+- **Email**: admin@gearnode.com
+- **Password**: 123456

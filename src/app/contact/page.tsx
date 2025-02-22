@@ -55,7 +55,7 @@ const CreateMessage = () => {
   };
 
   return (
-    <div className="p-4 md:p-0">
+    <div className="p-4 md:p-0 md:mt-10">
       <h1 className="text-3xl text-center mb-6">Leave a Message</h1>
       <div className="flex justify-center h-screen w-[90%] mx-auto ">
         <Form {...form}>

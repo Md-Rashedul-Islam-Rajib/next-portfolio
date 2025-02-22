@@ -19,11 +19,11 @@ const NavMenu = ({ session }: { session: Session | null }) => {
     <div>
       <NavigationMenu>
         <NavigationMenuList className="space-x-6 text-white font-semibold">
-          {menuItems.map((item) => {
+          {menuItems.map((item,index) => {
             const isActive = pathname === item.link; // ✅ Check if route is active
 
             return (
-              <Link key={item.link} href={item.link}>
+              <Link key={index} href={item.link}>
                 <NavigationMenuItem
                   className={`flex items-center space-x-2 transition-all rounded-xl py-1 px-2 ${
                     isActive
